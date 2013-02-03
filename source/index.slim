@@ -1,3 +1,6 @@
 ---
-title: Welcome to Middleman
+title: 首页
 ---
+ul
+  - sitemap.resources.select{|p| p.path =~ /code/}.each do |p|
+    li == link_to p.data.title, p.path

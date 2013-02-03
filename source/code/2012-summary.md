@@ -1,19 +1,12 @@
 ---
 title: "Community Extensions"
 ---
-## Git
 
+## Git
 - Git 是什么
 
-``` ruby
-require 'rack/codehighlighter'
-require "pygments"
-
-use Rack::Codehighlighter, 
-  :pygments,
-  :element => "pre>code",
-  :pattern => /\A:::([-_+\w]+)\s*\n/,
-  :markdown => true
+```javascript
+  var a = 1;
 ```
 
 # `w=1`
