@@ -6,3 +6,5 @@ gem "stylus", "~> 0.7.0"
 gem "redcarpet"
 
 gem "middleman-syntax", "~> 1.0.0"
+gem "middleman-blog", "~> 3.1.1"
+
