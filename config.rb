@@ -54,7 +54,12 @@ set :images_dir, 'pics'
 
 activate :directory_indexes
 activate :syntax
-# Build-specific configuration
+activate :blog do |blog|
+  blog.permalink = "blog/:title"
+  blog.sources = "blog/:title.html"
+  blog.layout = "layouts/blog"
+end
+
 configure :build do
   activate :minify_css
 

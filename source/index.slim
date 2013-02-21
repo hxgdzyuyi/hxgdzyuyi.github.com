@@ -1,6 +1,8 @@
 ---
 title: 首页
+pageable: true
+per_page: 10
 ---
 ul
-  - sitemap.resources.select{|p| p.path =~ /code/}.each do |p|
-    li == link_to p.data.title, p.path
+  - page_articles.each_with_index do |article, i|
+    li == link_to article.title, article
