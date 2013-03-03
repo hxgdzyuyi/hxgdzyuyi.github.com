@@ -6,6 +6,7 @@ html
     title
       = data.page.title || "Hxgdzyuyi"
     == stylesheet_link_tag "normalize", "master"
+    == yield_content :head
   body
     div.wrapper
       div.main
