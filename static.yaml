@@ -1,0 +1,4 @@
+repos:
+  mockee/arkui:
+    file:
+      ./stylus: ./source/css/arkui/
