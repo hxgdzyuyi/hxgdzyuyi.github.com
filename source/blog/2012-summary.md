@@ -9,6 +9,8 @@ seo: Git 101
 ---
 因为 102 比 101 还多 1, 纯粹是因为 102 比较容易做 seo 啦。
 
+技巧
+---
 1. `w` 参数。
 
   参数 `w` 可以搭配 `git-diff` 和 `git-blame` 使用, o(∩∩)o 。
@@ -41,4 +43,3 @@ seo: Git 101
 
 4. 见过的比较好的 git-hook。
   - 提交 commit 前自动运行 jshint [[link]](https://github.com/adamrisser/JSHint-pre-commit-git-hook)
-  - checkout 的时候会自动运行 bundle [[link]](https://github.com/cypher/dotfiles/blob/master/git-hooks/bundle-when-checkout.sh)
