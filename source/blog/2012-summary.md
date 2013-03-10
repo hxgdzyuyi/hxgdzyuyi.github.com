@@ -1,10 +1,9 @@
 ---
-title: "Git 102"
+title: "Git 102: -w, --prune, git-log"
 date: 2013/02/15
 tags: code
 seo: Git 101
 ---
-## Git 102: -w, --prune, git-log
 
 为什么是102？
 ---

@@ -1,15 +1,44 @@
 body
-  background: #bcdba6
+  background: #e8ecec
   color: black
+  font: 12px/1.5 "Helvetica Neue",Helvetica,Arial,sans-serif
 
 a
   color: #001B36
   text-decoration: none
 
-.main
+ul
+  padding: 0
+  margin: 0
+
+.wrapper
   width: 686px
   height: 900px
-  padding: 30px
+  padding: 30px 0px
   overflow: hidden
-  margin: 0 auto
+  margin: 10px auto
   background: white
+  border-radius: 15px
+  box-shadow: 0 0 7px 0 rgba(0,0,0,0.3)
+
+.main
+  margin: 0 30px
+
+.nav
+  padding: 0 30px 15px
+  border-bottom: 1px solid #ddd
+  li
+    padding: 3px 10px
+    margin-right: 5px
+    list-style: none
+    display: inline-block
+    border-radius: 5px
+    cursor: pointer
+    &:hover
+    .on
+      background: #1ba6b2
+      a
+        color: white
+  a
+    font-size: 14px
+    color: #1ba6b2
