@@ -60,7 +60,7 @@ page "/feed.xml", :layout => false
 activate :directory_indexes
 activate :syntax
 activate :blog do |blog|
-  blog.permalink = "blog/:title"
+  blog.permalink = "blog/:title.html"
   blog.sources = "blog/:title.html"
   blog.layout = "layouts/blog"
 end
