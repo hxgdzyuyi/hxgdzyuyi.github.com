@@ -75,6 +75,7 @@ use Rack::Subset, {
   :subset_css_prefix => 'cjk',
   :symbol_font_map => {
     'hymb' => ['hymb', '.ttf'],
+    'zqzmxs' => ['zqzmxs', '.ttf'],
   },
   :prefix => 'webfont',
   :font_file_dir => 'font',
