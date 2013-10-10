@@ -69,6 +69,19 @@ activate :deploy do |deploy|
   deploy.branch = "master"
 end
 
+require 'rack/subset'
+
+use Rack::Subset, {
+  :subset_css_prefix => 'cjk',
+  :symbol_font_map => {
+    'hymb' => ['hymb', '.ttf'],
+  },
+  :prefix => 'webfont',
+  :font_file_dir => 'font',
+  :font_dist_dir => 'font_dist',
+  :public_path => File.expand_path('../source', __FILE__)
+}
+
 configure :build do
   activate :minify_css
 
@@ -86,4 +99,8 @@ configure :build do
 
   # Or use a different image path
   # set :http_path, "/Content/images/"
+end
+require 'middleman-sprockets'
+after_configuration do
+  sprockets.append_path "./source/font_dist"
 end
