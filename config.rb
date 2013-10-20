@@ -69,18 +69,19 @@ activate :deploy do |deploy|
   deploy.branch = "master"
 end
 
-require 'rack/subset'
+require 'rack/subsetter'
 
-use Rack::Subset, {
-  :subset_css_prefix => 'cjk',
-  :symbol_font_map => {
+use Rack::Subsetter, {
+  :font_map => {
     'hymb' => ['hymb', '.ttf'],
     'zqzmxs' => ['zqzmxs', '.ttf'],
   },
   :prefix => 'webfont',
-  :font_file_dir => 'font',
-  :font_dist_dir => 'font_dist',
-  :public_path => File.expand_path('../source', __FILE__)
+  :font_source => File.expand_path('../source/font', __FILE__),
+  :font_dist => {
+    :public_path => File.expand_path('../source', __FILE__),
+    :dir => 'font_dist',
+  }
 }
 
 require 'middleman-sprockets'
