@@ -83,6 +83,7 @@ use Rack::Subset, {
   :public_path => File.expand_path('../source', __FILE__)
 }
 
+require 'middleman-sprockets'
 configure :build do
   activate :minify_css
 
@@ -100,8 +101,11 @@ configure :build do
 
   # Or use a different image path
   # set :http_path, "/Content/images/"
-end
-require 'middleman-sprockets'
-after_configuration do
+  set :font_path, "./source/font_dist"
   sprockets.append_path "./source/font_dist"
+end
+require "fileutils"
+after_build do |builder|
+  p full_path(build_dir)
+  FileUtils.cp_r(File.expand_path('../source/font_dist', __FILE__), File.expand_path('../build', __FILE__))
 end

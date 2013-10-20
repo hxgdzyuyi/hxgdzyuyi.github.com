@@ -6,8 +6,9 @@ GEM
       multi_json (~> 1.0)
     builder (3.2.0)
     chunky_png (1.2.7)
-    cjk-subset (0.1.1)
+    cjk-subset (0.1.2)
       nokogiri (~> 1.5.0)
+      posix-spawn (~> 0.3.6)
     coffee-script (2.2.0)
       coffee-script-source
       execjs
@@ -131,7 +132,7 @@ PLATFORMS
 
 DEPENDENCIES
   builder (~> 3.2.0)
-  cjk-subset (~> 0.1.1)
+  cjk-subset (~> 0.1.2)
   middleman (~> 3.0.11)
   middleman-blog (~> 3.1.1)
   middleman-deploy (~> 0.0.10)
