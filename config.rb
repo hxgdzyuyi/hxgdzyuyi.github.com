@@ -74,7 +74,7 @@ require 'rack/subsetter'
 use Rack::Subsetter, {
   :font_map => {
     'hymb' => ['hymb', '.ttf'],
-    'zqzmxs' => ['zqzmxs', '.ttf'],
+    'zqzmxs' => ['MFYueHei', '.ttf'],
   },
   :prefix => 'webfont',
   :font_source => File.expand_path('../source/font', __FILE__),
