@@ -18,9 +18,77 @@
     <author>
       <name>Article Author</name>
     </author>
-    <summary type="html">&lt;p&gt;就是这样。。还挺有意思的对吧&lt;/p&gt;
+    <summary type="html">&lt;h2&gt;中文字体的好处&lt;/h2&gt;
+
+&lt;p&gt;中文字体通常来看有以下两种好处&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;足够原生&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;可以方便的修改属性
+&lt;table class="table table-bordered table-striped"&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;属性&lt;/th&gt;
+      &lt;th&gt;效果&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;字号大小&lt;/td&gt;
+      &lt;td&gt;
+        &lt;span class="webfont-mfyuehei" style="font-size: 20px"&gt;大&lt;/span&gt; / &lt;span class="webfont-mfyuehei" style="font-size: 12px"&gt;小&lt;/span&gt;&lt;/p&gt;
 </summary>
-    <content type="html">&lt;p&gt;就是这样。。还挺有意思的对吧&lt;/p&gt;
+    <content type="html">&lt;h2&gt;中文字体的好处&lt;/h2&gt;
+
+&lt;p&gt;中文字体通常来看有以下两种好处&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;足够原生&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;可以方便的修改属性
+&lt;table class="table table-bordered table-striped"&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;属性&lt;/th&gt;
+      &lt;th&gt;效果&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;字号大小&lt;/td&gt;
+      &lt;td&gt;
+        &lt;span class="webfont-mfyuehei" style="font-size: 20px"&gt;大&lt;/span&gt; / &lt;span class="webfont-mfyuehei" style="font-size: 12px"&gt;小&lt;/span&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;颜色&lt;/td&gt;
+      &lt;td&gt;
+        &lt;span class="webfont-mfyuehei" style="color:green; font-size: 20px"&gt;颜&lt;/span&gt; &lt;span class="webfont-mfyuehei" style="color:#37a7d4; font-size: 20px"&gt;色&lt;/span&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;粗细&lt;/td&gt;
+      &lt;td&gt;
+        &lt;span class="webfont-mfyuehei" style="font-weight: 800; font-size: 20px;"&gt;文&lt;/span&gt; &lt;span class="webfont-mfyuehei" style="font-weight: 100; font-size: 20px"&gt;文&lt;/span&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;CSS3 Text Effects / SVG filters&lt;/td&gt;
+      &lt;td&gt;
+        &lt;span class="webfont-mfyuehei" style="color:#666; font-size: 22px; text-shadow: 1px 1px 0px #eee, 2px 3px 0px #ddd; "&gt;中文&lt;/span&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;&lt;/p&gt;
+
+&lt;p&gt;同样的可以很好的处理禁则禁则, 所谓的禁则处理就是标点符号的正确摆放&lt;/p&gt;
+
+&lt;div class="webfont-mfyuehei" style="width: 100px; border; padding: 10px; border: 1px solid #ddd; border-radius: 10px"&gt;
+中文字体,关键是可以：“禁则”哦!!!
+&lt;/div&gt;
 </content>
   </entry>
   <entry>
