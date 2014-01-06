@@ -10,7 +10,7 @@
     <name>Blog Author</name>
   </author>
   <entry>
-    <title>中文字体其实很有意思的! 关键是可以：“禁则”哦!!!</title>
+    <title>中文字体其实也可以用在网页上的</title>
     <link rel="alternate" href="/blog/chinese-subset.html"/>
     <id>/blog/chinese-subset.html</id>
     <published>2013-10-10T00:00:00Z</published>
@@ -18,41 +18,78 @@
     <author>
       <name>Article Author</name>
     </author>
-    <summary type="html">&lt;h2&gt;中文字体的好处&lt;/h2&gt;
+    <summary type="html">&lt;h2&gt;中文字体和 @font-face&lt;/h2&gt;
 
-&lt;p&gt;中文字体通常来看有以下两种好处&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;足够原生&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;可以方便的修改属性
-&lt;table class="table table-bordered table-striped"&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;属性&lt;/th&gt;
-      &lt;th&gt;效果&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;字号大小&lt;/td&gt;
-      &lt;td&gt;
-        &lt;span class="webfont-mfyuehei" style="font-size: 20px"&gt;大&lt;/span&gt; / &lt;span class="webfont-mfyuehei" style="font-size: 12px"&gt;小&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;对于互联网而言，自定义字体从来不是一个陌生的东西，&lt;a href="http://web.archive.org/web/19990302042057/http://www.microsoft.com/typography/web/designer/face1.htm"&gt;IE 4&lt;/a&gt; 从 1997 年起就已经支持在浏览器中潜入自定义的字体。而这一种技术被 &lt;a href="http://www.google.com/fonts"&gt;Goolge Fonts&lt;/a&gt; 等免费字体服务推到了一个新的高度。前端工程师借助于 &lt;a href="https://developer.mozilla.org/zh-CN/docs/CSS/@font-face"&gt;@font-face&lt;/a&gt; , 可以轻松的在网页上使用各种字体，基本已经成为国外网页设计的标配了。&lt;/p&gt;
 </summary>
-    <content type="html">&lt;h2&gt;中文字体的好处&lt;/h2&gt;
+    <content type="html">&lt;h2&gt;中文字体和 @font-face&lt;/h2&gt;
 
-&lt;p&gt;中文字体通常来看有以下两种好处&lt;/p&gt;
+&lt;p&gt;对于互联网而言，自定义字体从来不是一个陌生的东西，&lt;a href="http://web.archive.org/web/19990302042057/http://www.microsoft.com/typography/web/designer/face1.htm"&gt;IE 4&lt;/a&gt; 从 1997 年起就已经支持在浏览器中潜入自定义的字体。而这一种技术被 &lt;a href="http://www.google.com/fonts"&gt;Goolge Fonts&lt;/a&gt; 等免费字体服务推到了一个新的高度。前端工程师借助于 &lt;a href="https://developer.mozilla.org/zh-CN/docs/CSS/@font-face"&gt;@font-face&lt;/a&gt; , 可以轻松的在网页上使用各种字体，基本已经成为国外网页设计的标配了。&lt;/p&gt;
+
+&lt;p&gt;可是回过头来一看，中文 和 font-face 似乎从来没有什么交集, “在网页中使用个性化的中文字体？” 这看起来是一件很困难的事情, 并且很少人做过的事情。仔细想想，瓶颈基本上可以归结在两个点&lt;/p&gt;
 
 &lt;ol&gt;
-&lt;li&gt;足够原生&lt;/li&gt;
+&lt;li&gt;中文字符太多，制作精良的中文字体太少， 成本也大。&lt;/li&gt;
+&lt;li&gt;中文字符太多，导致文件庞大，动辄数个 MB，下载成本太大。&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;可以方便的修改属性
+&lt;h3&gt;如何解决中文字体过大的问题&lt;/h3&gt;
+
+&lt;p&gt;相比起我们希望的, 在网页上使用中文字体，中文字体更早，并且更频繁的用于 PDF 上。 而且 PDF 同样对文件大小有很严苛的限制。基本上前辈们为了解决 PDF 文件可以使用各种漂亮的字体，并且文件体积足够小，有一种叫做 字体子集 (embedded subset) 的概念，就是将原有的字体裁剪出只被这个 PDF 文件使用的部分，从而达到缩小字体体积的目的。相对应的概念叫做 (full embedded fonts)。 参考这个方案，我们只需要针对特定的网页裁剪出特定的字体就可以了，这样让网页在流量，打开速度和美观上达到了和谐。&lt;/p&gt;
+
+&lt;p&gt;借助 Google Fonts 使用的类库 &lt;a href="https://code.google.com/p/sfntly/"&gt;sfntly&lt;/a&gt; 可以轻松做到这一点, sfntly 可以轻松的处理基于 &lt;a href="http://en.wikipedia.org/wiki/SFNT"&gt;sfnt&lt;/a&gt; 格式存储的字体, 拆分, 裁剪, 生成 WOFF, TTF, EOT 等字体。&lt;/p&gt;
+
+&lt;p&gt;比如直接使用 sfntly 内置的 sfnttool, 可以看到它的命令帮助&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  java -jar sfnttool.jar
+  Subset [-?|-h|-help] [-b] [-s string] fontfile outfile
+  Prototype font subsetter
+    -?,-help  print this help information
+    -s,-string   String to subset
+    -b,-bench  Benchmark (run 10000 iterations)
+    -h,-hints  Strip hints
+    -w,-woff   Output WOFF format
+    -e,-eot  Output EOT format
+    -x,-mtx  Enable Microtype Express compression for EOT format]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;可以轻松的从 MFYuehei.ttf 中提取出只有 &amp;#39;中文&amp;#39; 两个字的字体&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  java -jar sfnttool.jar -w -s &amp;#39;中文&amp;#39; MFYuehei.ttf new-MFYuehei.ttf
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;总的来说在裁剪字体这条方向上, 目前也有几种在这个方向上的努力， 稍做介绍。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://github.com/hxgdzyuyi/cjk-subsetter"&gt;CjkSubsetter&lt;/a&gt; 本站使用的 Rack 中间件借 sfntly, 搭配 middleman 生成了现在所见的这个静态网站&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.foundertype.com/cloudfont/cloudfont.html"&gt;方正字体云服务&lt;/a&gt; 收费， 方正字体&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.justfont.com/"&gt;justfont&lt;/a&gt; 收费, 使用 js 请求的方案, 原则上可以嵌入到任何网站, 有 api 请求限制， 字体有限。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3&gt;如何找到优秀的中文字体&lt;/h3&gt;
+
+&lt;p&gt;以下罗列几款推荐的，个人使用免费的资源&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://makefont.com/"&gt;造字工房&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://font.sentywed.com/chalk.htm"&gt;新蒂黑板报体&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.unifont.org/fontguide/"&gt;Unicode Font Guide For Free/Libre Open Source Operating Systems&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://wiki.ubuntu.org.cn/%E5%85%8D%E8%B4%B9%E4%B8%AD%E6%96%87%E5%AD%97%E4%BD%93"&gt;Ubuntu wiki - 免费中文字体&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://typeland.com/typeface/TpldYiFengScripture/"&gt;TypeLand 儀鳳寫經體&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;中文字体的为设计带来的变革&lt;/h2&gt;
+
+&lt;h3&gt;作为浏览器的基本组成，可以和 Javascript 和 CSS 互动&lt;/h3&gt;
+
+&lt;p&gt;显然，字符是网页最基本的组成部分。比起图片来，字体更加的灵活，可以更充分的使用浏览器原生的功能，给设计带来无限可能。&lt;/p&gt;
+
+&lt;p&gt;比如下表显示了中文字体和 CSS 互动的几个例子。这些还没有涉及到动画，可以更加的精彩。&lt;/p&gt;
+
 &lt;table class="table table-bordered table-striped"&gt;
   &lt;thead&gt;
     &lt;tr&gt;
-      &lt;th&gt;属性&lt;/th&gt;
+      &lt;th&gt;字体属性&lt;/th&gt;
       &lt;th&gt;效果&lt;/th&gt;
     &lt;/tr&gt;
   &lt;/thead&gt;
@@ -82,16 +119,19 @@
       &lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
-&lt;/table&gt;&lt;/p&gt;
+&lt;/table&gt;
 
-&lt;p&gt;同样的可以很好的处理禁则禁则, 所谓的禁则处理就是标点符号的正确摆放
-&lt;div class="webfont-mfyuehei resizeable" style="resize: horizontal; width: 100px; border; padding: 10px; border: 1px solid #ddd; border-radius: 10px"&gt;
+&lt;h3&gt;可以使用浏览器原生的禁则功能，包括响应式的网页设计。&lt;/h3&gt;
+
+&lt;p&gt;浏览器每一个行文字的结尾都遵循了标准的禁则(比如中文里头逗号不能出现在第一行的第一个字符)。使用中文字体并不会破坏这个特性，让优秀的设计可以在不同的设备完美的展现。&lt;/p&gt;
+
+&lt;div class="webfont-mfyuehei resizeable" style="resize: horizontal; overflow: hidden; width: 100px; border; padding: 10px; border: 1px solid #ddd; border-radius: 10px"&gt;
 中文字体,关键是可以：“禁则”哦!!!
-&lt;/div&gt;&lt;/p&gt;
+&lt;/div&gt;
 
-&lt;p data-height="268" data-theme-id="3428" data-slug-hash="ugpIb" data-user="hxgdzyuyi" data-default-tab="result" class='codepen'&gt;See the Pen &lt;a href='http://codepen.io/hxgdzyuyi/pen/ugpIb'&gt;CSS Text filling with water&lt;/a&gt; by hxgdzyuyi (&lt;a href='http://codepen.io/hxgdzyuyi'&gt;@hxgdzyuyi&lt;/a&gt;) on &lt;a href='http://codepen.io'&gt;CodePen&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;更多精彩的实例&lt;/h3&gt;
 
-&lt;script async src="//codepen.io/assets/embed/ei.js"&gt;&lt;/script&gt;
+&lt;p&gt;以下三个实例均 fork 自 codepen.io，仅仅替换了其中的中文字体，想表达的就是中文字体确实让网页设计更加的有趣。&lt;/p&gt;
 
 &lt;p data-height="468" data-theme-id="3428" data-slug-hash="sGCDw" data-user="hxgdzyuyi" data-default-tab="result" class='codepen'&gt;See the Pen &lt;a href='http://codepen.io/hxgdzyuyi/pen/sGCDw'&gt;CSS3 Card Deck Drop Down&lt;/a&gt; by hxgdzyuyi (&lt;a href='http://codepen.io/hxgdzyuyi'&gt;@hxgdzyuyi&lt;/a&gt;) on &lt;a href='http://codepen.io'&gt;CodePen&lt;/a&gt;&lt;/p&gt;
 
@@ -100,6 +140,14 @@
 &lt;p data-height="268" data-theme-id="3428" data-slug-hash="vwDqg" data-user="hxgdzyuyi" data-default-tab="result" class='codepen'&gt;See the Pen &lt;a href='http://codepen.io/hxgdzyuyi/pen/vwDqg'&gt;The Walking Dead (webkit)&lt;/a&gt; by hxgdzyuyi (&lt;a href='http://codepen.io/hxgdzyuyi'&gt;@hxgdzyuyi&lt;/a&gt;) on &lt;a href='http://codepen.io'&gt;CodePen&lt;/a&gt;&lt;/p&gt;
 
 &lt;script async src="//codepen.io/assets/embed/ei.js"&gt;&lt;/script&gt;
+
+&lt;p data-height="268" data-theme-id="3428" data-slug-hash="ugpIb" data-user="hxgdzyuyi" data-default-tab="result" class='codepen'&gt;See the Pen &lt;a href='http://codepen.io/hxgdzyuyi/pen/ugpIb'&gt;CSS Text filling with water&lt;/a&gt; by hxgdzyuyi (&lt;a href='http://codepen.io/hxgdzyuyi'&gt;@hxgdzyuyi&lt;/a&gt;) on &lt;a href='http://codepen.io'&gt;CodePen&lt;/a&gt;&lt;/p&gt;
+
+&lt;script async src="//codepen.io/assets/embed/ei.js"&gt;&lt;/script&gt;
+
+&lt;h2&gt;感谢&lt;/h2&gt;
+
+&lt;p&gt;本站使用了 &lt;a href="http://makefont.com/"&gt;造字工房&lt;/a&gt; 的悦黑常规体， 和 &lt;a href="http://font.sentywed.com/chalk.htm"&gt;新蒂黑板报体&lt;/a&gt;。&lt;/p&gt;
 </content>
   </entry>
   <entry>
@@ -133,10 +181,11 @@
 &lt;li&gt;&lt;p&gt;&lt;code&gt;w&lt;/code&gt; 参数。&lt;/p&gt;
 
 &lt;p&gt;参数 &lt;code&gt;w&lt;/code&gt; 可以搭配 &lt;code&gt;git-diff&lt;/code&gt; 和 &lt;code&gt;git-blame&lt;/code&gt; 使用, o(∩∩)o 。&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;git diff -w &lt;span class="o"&gt;(&lt;/span&gt;--ignore-all-space&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="c"&gt;# 可以在 diff 的时候忽略掉对于 whitespace 的修改&lt;/span&gt;
+
+&lt;pre&gt;&lt;code class="bash"&gt;git diff -w (--ignore-all-space) # 可以在 diff 的时候忽略掉对于 whitespace 的修改
 git blame -w
-  &lt;span class="c"&gt;# 我觉得比起 diff 来说 blame 的这个参数更加的让我喜爱。&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+  # 我觉得比起 diff 来说 blame 的这个参数更加的让我喜爱。
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;/ol&gt;
 </summary>
     <content type="html">&lt;h2&gt;为什么是102？&lt;/h2&gt;
@@ -149,24 +198,27 @@ git blame -w
 &lt;li&gt;&lt;p&gt;&lt;code&gt;w&lt;/code&gt; 参数。&lt;/p&gt;
 
 &lt;p&gt;参数 &lt;code&gt;w&lt;/code&gt; 可以搭配 &lt;code&gt;git-diff&lt;/code&gt; 和 &lt;code&gt;git-blame&lt;/code&gt; 使用, o(∩∩)o 。&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;git diff -w &lt;span class="o"&gt;(&lt;/span&gt;--ignore-all-space&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="c"&gt;# 可以在 diff 的时候忽略掉对于 whitespace 的修改&lt;/span&gt;
+
+&lt;pre&gt;&lt;code class="bash"&gt;git diff -w (--ignore-all-space) # 可以在 diff 的时候忽略掉对于 whitespace 的修改
 git blame -w
-  &lt;span class="c"&gt;# 我觉得比起 diff 来说 blame 的这个参数更加的让我喜爱。&lt;/span&gt;
-  &lt;span class="c"&gt;# 功能也是屏蔽 whitespace 的修改, 免的很多时候 blame 到无意义的 commit&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+  # 我觉得比起 diff 来说 blame 的这个参数更加的让我喜爱。
+  # 功能也是屏蔽 whitespace 的修改, 免的很多时候 blame 到无意义的 commit
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;快速的删除 github 上本地已经删除的分支。&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;git push --prune &lt;span class="o"&gt;[&lt;/span&gt;&amp;lt;repository&amp;gt; &lt;span class="o"&gt;[&lt;/span&gt;&amp;lt;refspec&amp;gt;...&lt;span class="o"&gt;]]&lt;/span&gt;
-  &lt;span class="c"&gt;# prune 就是 “修剪” 的意思， 这条命令会删除 remote 端上本地已经删掉的分支&lt;/span&gt;
-git push --mirror &lt;span class="o"&gt;[&lt;/span&gt;&amp;lt;repository&amp;gt; &lt;span class="o"&gt;[&lt;/span&gt;&amp;lt;refspec&amp;gt;...&lt;span class="o"&gt;]]&lt;/span&gt;
-  &lt;span class="c"&gt;# 类似的命令 不过功能是让 remote 的仓库和本地同步&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+
+&lt;pre&gt;&lt;code class="bash"&gt;git push --prune [&amp;lt;repository&amp;gt; [&amp;lt;refspec&amp;gt;...]]
+  # prune 就是 “修剪” 的意思， 这条命令会删除 remote 端上本地已经删掉的分支
+git push --mirror [&amp;lt;repository&amp;gt; [&amp;lt;refspec&amp;gt;...]]
+  # 类似的命令 不过功能是让 remote 的仓库和本地同步
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;查看每个分支的未提交的第一条commit &lt;a href="http://jfoucher.com/2012/04/github-tricks-from-stackoverflow.html"&gt;[link]&lt;/a&gt;&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;git log --branches --not --remotes --decorate --oneline
-  &lt;span class="c"&gt;# --not --remotes 查看未提交的信息 --not --remotes=*/master 所有远端master分支中不存在的 commit&lt;/span&gt;
-  &lt;span class="c"&gt;# --simplify-by-decoration 属于 git-log 的 History Simplification 方面的参数，显示代表选中分支和 tag 的 commit 信息&lt;/span&gt;
-  &lt;span class="c"&gt;# --decorate 显示分支名&lt;/span&gt;
-  &lt;span class="c"&gt;# --online 显示一行commit&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+
+&lt;pre&gt;&lt;code class="bash"&gt;git log --branches --not --remotes --decorate --oneline
+  # --not --remotes 查看未提交的信息 --not --remotes=*/master 所有远端master分支中不存在的 commit
+  # --simplify-by-decoration 属于 git-log 的 History Simplification 方面的参数，显示代表选中分支和 tag 的 commit 信息
+  # --decorate 显示分支名
+  # --online 显示一行commit
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;见过的比较好的 git-hook。&lt;/p&gt;
 
 &lt;ul&gt;
