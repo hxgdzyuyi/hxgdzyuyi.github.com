@@ -36,24 +36,20 @@
 <p>借助 Google Fonts 使用的类库 <a href="https://code.google.com/p/sfntly/">sfntly</a> 可以轻松做到这一点, sfntly 可以轻松的处理基于 <a href="http://en.wikipedia.org/wiki/SFNT">sfnt</a> 格式存储的字体, 拆分, 裁剪, 生成 WOFF, TTF, EOT 等字体。</p>
 
 <p>比如直接使用 sfntly 内置的 sfnttool, 可以看到它的命令帮助</p>
-
-<pre><code>  java -jar sfnttool.jar
-  Subset [-?|-h|-help] [-b] [-s string] fontfile outfile
-  Prototype font subsetter
-    -?,-help  print this help information
-    -s,-string   String to subset
-    -b,-bench  Benchmark (run 10000 iterations)
-    -h,-hints  Strip hints
-    -w,-woff   Output WOFF format
-    -e,-eot  Output EOT format
-    -x,-mtx  Enable Microtype Express compression for EOT format]
-</code></pre>
-
+<div class="highlight"><pre>  <span class="n">java</span> <span class="o">-</span><span class="n">jar</span> <span class="n">sfnttool</span><span class="p">.</span><span class="n">jar</span>
+  <span class="n">Subset</span> <span class="p">[</span><span class="o">-</span>?<span class="o">|-</span><span class="n">h</span><span class="o">|-</span><span class="n">help</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">b</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">s</span> <span class="n">string</span><span class="p">]</span> <span class="n">fontfile</span> <span class="n">outfile</span>
+  <span class="n">Prototype</span> <span class="n">font</span> <span class="n">subsetter</span>
+    <span class="o">-</span>?<span class="p">,</span><span class="o">-</span><span class="n">help</span>  <span class="n">print</span> <span class="n">this</span> <span class="n">help</span> <span class="n">information</span>
+    <span class="o">-</span><span class="n">s</span><span class="p">,</span><span class="o">-</span><span class="n">string</span>   <span class="n">String</span> <span class="n">to</span> <span class="n">subset</span>
+    <span class="o">-</span><span class="n">b</span><span class="p">,</span><span class="o">-</span><span class="n">bench</span>  <span class="n">Benchmark</span> <span class="p">(</span><span class="n">run</span> <span class="mi">10000</span> <span class="n">iterations</span><span class="p">)</span>
+    <span class="o">-</span><span class="n">h</span><span class="p">,</span><span class="o">-</span><span class="n">hints</span>  <span class="n">Strip</span> <span class="n">hints</span>
+    <span class="o">-</span><span class="n">w</span><span class="p">,</span><span class="o">-</span><span class="n">woff</span>   <span class="n">Output</span> <span class="n">WOFF</span> <span class="n">format</span>
+    <span class="o">-</span><span class="n">e</span><span class="p">,</span><span class="o">-</span><span class="n">eot</span>  <span class="n">Output</span> <span class="n">EOT</span> <span class="n">format</span>
+    <span class="o">-</span><span class="n">x</span><span class="p">,</span><span class="o">-</span><span class="n">mtx</span>  <span class="n">Enable</span> <span class="n">Microtype</span> <span class="n">Express</span> <span class="n">compression</span> <span class="k">for</span> <span class="n">EOT</span> <span class="n">format</span><span class="p">]</span>
+</pre></div>
 <p>可以轻松的从 MFYuehei.ttf 中提取出只有 &#39;中文&#39; 两个字的字体</p>
-
-<pre><code>  java -jar sfnttool.jar -w -s &#39;中文&#39; MFYuehei.ttf new-MFYuehei.ttf
-</code></pre>
-
+<div class="highlight"><pre>  <span class="n">java</span> <span class="o">-</span><span class="n">jar</span> <span class="n">sfnttool</span><span class="p">.</span><span class="n">jar</span> <span class="o">-</span><span class="n">w</span> <span class="o">-</span><span class="n">s</span> <span class="s">&#39;中文&#39;</span> <span class="n">MFYuehei</span><span class="p">.</span><span class="n">ttf</span> <span class="n">new</span><span class="o">-</span><span class="n">MFYuehei</span><span class="p">.</span><span class="n">ttf</span>
+</pre></div>
 <p>总的来说在裁剪字体这条方向上, 目前也有几种在这个方向上的努力， 稍做介绍。</p>
 
 <ol>

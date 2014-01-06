@@ -40,24 +40,20 @@
 &lt;p&gt;借助 Google Fonts 使用的类库 &lt;a href="https://code.google.com/p/sfntly/"&gt;sfntly&lt;/a&gt; 可以轻松做到这一点, sfntly 可以轻松的处理基于 &lt;a href="http://en.wikipedia.org/wiki/SFNT"&gt;sfnt&lt;/a&gt; 格式存储的字体, 拆分, 裁剪, 生成 WOFF, TTF, EOT 等字体。&lt;/p&gt;
 
 &lt;p&gt;比如直接使用 sfntly 内置的 sfnttool, 可以看到它的命令帮助&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;  java -jar sfnttool.jar
-  Subset [-?|-h|-help] [-b] [-s string] fontfile outfile
-  Prototype font subsetter
-    -?,-help  print this help information
-    -s,-string   String to subset
-    -b,-bench  Benchmark (run 10000 iterations)
-    -h,-hints  Strip hints
-    -w,-woff   Output WOFF format
-    -e,-eot  Output EOT format
-    -x,-mtx  Enable Microtype Express compression for EOT format]
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;div class="highlight"&gt;&lt;pre&gt;  &lt;span class="n"&gt;java&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;jar&lt;/span&gt; &lt;span class="n"&gt;sfnttool&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;jar&lt;/span&gt;
+  &lt;span class="n"&gt;Subset&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;?&lt;span class="o"&gt;|-&lt;/span&gt;&lt;span class="n"&gt;h&lt;/span&gt;&lt;span class="o"&gt;|-&lt;/span&gt;&lt;span class="n"&gt;help&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt; &lt;span class="n"&gt;string&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="n"&gt;fontfile&lt;/span&gt; &lt;span class="n"&gt;outfile&lt;/span&gt;
+  &lt;span class="n"&gt;Prototype&lt;/span&gt; &lt;span class="n"&gt;font&lt;/span&gt; &lt;span class="n"&gt;subsetter&lt;/span&gt;
+    &lt;span class="o"&gt;-&lt;/span&gt;?&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;help&lt;/span&gt;  &lt;span class="n"&gt;print&lt;/span&gt; &lt;span class="n"&gt;this&lt;/span&gt; &lt;span class="n"&gt;help&lt;/span&gt; &lt;span class="n"&gt;information&lt;/span&gt;
+    &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;string&lt;/span&gt;   &lt;span class="n"&gt;String&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;subset&lt;/span&gt;
+    &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;bench&lt;/span&gt;  &lt;span class="n"&gt;Benchmark&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt; &lt;span class="mi"&gt;10000&lt;/span&gt; &lt;span class="n"&gt;iterations&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;h&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;hints&lt;/span&gt;  &lt;span class="n"&gt;Strip&lt;/span&gt; &lt;span class="n"&gt;hints&lt;/span&gt;
+    &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;w&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;woff&lt;/span&gt;   &lt;span class="n"&gt;Output&lt;/span&gt; &lt;span class="n"&gt;WOFF&lt;/span&gt; &lt;span class="n"&gt;format&lt;/span&gt;
+    &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;eot&lt;/span&gt;  &lt;span class="n"&gt;Output&lt;/span&gt; &lt;span class="n"&gt;EOT&lt;/span&gt; &lt;span class="n"&gt;format&lt;/span&gt;
+    &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;mtx&lt;/span&gt;  &lt;span class="n"&gt;Enable&lt;/span&gt; &lt;span class="n"&gt;Microtype&lt;/span&gt; &lt;span class="n"&gt;Express&lt;/span&gt; &lt;span class="n"&gt;compression&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;EOT&lt;/span&gt; &lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;可以轻松的从 MFYuehei.ttf 中提取出只有 &amp;#39;中文&amp;#39; 两个字的字体&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;  java -jar sfnttool.jar -w -s &amp;#39;中文&amp;#39; MFYuehei.ttf new-MFYuehei.ttf
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;div class="highlight"&gt;&lt;pre&gt;  &lt;span class="n"&gt;java&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;jar&lt;/span&gt; &lt;span class="n"&gt;sfnttool&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;jar&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;w&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;中文&amp;#39;&lt;/span&gt; &lt;span class="n"&gt;MFYuehei&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ttf&lt;/span&gt; &lt;span class="n"&gt;new&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;MFYuehei&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ttf&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;总的来说在裁剪字体这条方向上, 目前也有几种在这个方向上的努力， 稍做介绍。&lt;/p&gt;
 
 &lt;ol&gt;
@@ -181,11 +177,10 @@
 &lt;li&gt;&lt;p&gt;&lt;code&gt;w&lt;/code&gt; 参数。&lt;/p&gt;
 
 &lt;p&gt;参数 &lt;code&gt;w&lt;/code&gt; 可以搭配 &lt;code&gt;git-diff&lt;/code&gt; 和 &lt;code&gt;git-blame&lt;/code&gt; 使用, o(∩∩)o 。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class="bash"&gt;git diff -w (--ignore-all-space) # 可以在 diff 的时候忽略掉对于 whitespace 的修改
+&lt;div class="highlight"&gt;&lt;pre&gt;git diff -w &lt;span class="o"&gt;(&lt;/span&gt;--ignore-all-space&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="c"&gt;# 可以在 diff 的时候忽略掉对于 whitespace 的修改&lt;/span&gt;
 git blame -w
-  # 我觉得比起 diff 来说 blame 的这个参数更加的让我喜爱。
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+  &lt;span class="c"&gt;# 我觉得比起 diff 来说 blame 的这个参数更加的让我喜爱。&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;/ol&gt;
 </summary>
     <content type="html">&lt;h2&gt;为什么是102？&lt;/h2&gt;
@@ -198,27 +193,24 @@ git blame -w
 &lt;li&gt;&lt;p&gt;&lt;code&gt;w&lt;/code&gt; 参数。&lt;/p&gt;
 
 &lt;p&gt;参数 &lt;code&gt;w&lt;/code&gt; 可以搭配 &lt;code&gt;git-diff&lt;/code&gt; 和 &lt;code&gt;git-blame&lt;/code&gt; 使用, o(∩∩)o 。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class="bash"&gt;git diff -w (--ignore-all-space) # 可以在 diff 的时候忽略掉对于 whitespace 的修改
+&lt;div class="highlight"&gt;&lt;pre&gt;git diff -w &lt;span class="o"&gt;(&lt;/span&gt;--ignore-all-space&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="c"&gt;# 可以在 diff 的时候忽略掉对于 whitespace 的修改&lt;/span&gt;
 git blame -w
-  # 我觉得比起 diff 来说 blame 的这个参数更加的让我喜爱。
-  # 功能也是屏蔽 whitespace 的修改, 免的很多时候 blame 到无意义的 commit
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+  &lt;span class="c"&gt;# 我觉得比起 diff 来说 blame 的这个参数更加的让我喜爱。&lt;/span&gt;
+  &lt;span class="c"&gt;# 功能也是屏蔽 whitespace 的修改, 免的很多时候 blame 到无意义的 commit&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;快速的删除 github 上本地已经删除的分支。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class="bash"&gt;git push --prune [&amp;lt;repository&amp;gt; [&amp;lt;refspec&amp;gt;...]]
-  # prune 就是 “修剪” 的意思， 这条命令会删除 remote 端上本地已经删掉的分支
-git push --mirror [&amp;lt;repository&amp;gt; [&amp;lt;refspec&amp;gt;...]]
-  # 类似的命令 不过功能是让 remote 的仓库和本地同步
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;git push --prune &lt;span class="o"&gt;[&lt;/span&gt;&amp;lt;repository&amp;gt; &lt;span class="o"&gt;[&lt;/span&gt;&amp;lt;refspec&amp;gt;...&lt;span class="o"&gt;]]&lt;/span&gt;
+  &lt;span class="c"&gt;# prune 就是 “修剪” 的意思， 这条命令会删除 remote 端上本地已经删掉的分支&lt;/span&gt;
+git push --mirror &lt;span class="o"&gt;[&lt;/span&gt;&amp;lt;repository&amp;gt; &lt;span class="o"&gt;[&lt;/span&gt;&amp;lt;refspec&amp;gt;...&lt;span class="o"&gt;]]&lt;/span&gt;
+  &lt;span class="c"&gt;# 类似的命令 不过功能是让 remote 的仓库和本地同步&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;查看每个分支的未提交的第一条commit &lt;a href="http://jfoucher.com/2012/04/github-tricks-from-stackoverflow.html"&gt;[link]&lt;/a&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class="bash"&gt;git log --branches --not --remotes --decorate --oneline
-  # --not --remotes 查看未提交的信息 --not --remotes=*/master 所有远端master分支中不存在的 commit
-  # --simplify-by-decoration 属于 git-log 的 History Simplification 方面的参数，显示代表选中分支和 tag 的 commit 信息
-  # --decorate 显示分支名
-  # --online 显示一行commit
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;git log --branches --not --remotes --decorate --oneline
+  &lt;span class="c"&gt;# --not --remotes 查看未提交的信息 --not --remotes=*/master 所有远端master分支中不存在的 commit&lt;/span&gt;
+  &lt;span class="c"&gt;# --simplify-by-decoration 属于 git-log 的 History Simplification 方面的参数，显示代表选中分支和 tag 的 commit 信息&lt;/span&gt;
+  &lt;span class="c"&gt;# --decorate 显示分支名&lt;/span&gt;
+  &lt;span class="c"&gt;# --online 显示一行commit&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;见过的比较好的 git-hook。&lt;/p&gt;
 
 &lt;ul&gt;

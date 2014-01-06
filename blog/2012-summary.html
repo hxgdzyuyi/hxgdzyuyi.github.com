@@ -28,27 +28,24 @@
 <li><p><code>w</code> 参数。</p>
 
 <p>参数 <code>w</code> 可以搭配 <code>git-diff</code> 和 <code>git-blame</code> 使用, o(∩∩)o 。</p>
-
-<pre><code class="bash">git diff -w (--ignore-all-space) # 可以在 diff 的时候忽略掉对于 whitespace 的修改
+<div class="highlight"><pre>git diff -w <span class="o">(</span>--ignore-all-space<span class="o">)</span> <span class="c"># 可以在 diff 的时候忽略掉对于 whitespace 的修改</span>
 git blame -w
-  # 我觉得比起 diff 来说 blame 的这个参数更加的让我喜爱。
-  # 功能也是屏蔽 whitespace 的修改, 免的很多时候 blame 到无意义的 commit
-</code></pre></li>
+  <span class="c"># 我觉得比起 diff 来说 blame 的这个参数更加的让我喜爱。</span>
+  <span class="c"># 功能也是屏蔽 whitespace 的修改, 免的很多时候 blame 到无意义的 commit</span>
+</pre></div></li>
 <li><p>快速的删除 github 上本地已经删除的分支。</p>
-
-<pre><code class="bash">git push --prune [&lt;repository&gt; [&lt;refspec&gt;...]]
-  # prune 就是 “修剪” 的意思， 这条命令会删除 remote 端上本地已经删掉的分支
-git push --mirror [&lt;repository&gt; [&lt;refspec&gt;...]]
-  # 类似的命令 不过功能是让 remote 的仓库和本地同步
-</code></pre></li>
+<div class="highlight"><pre>git push --prune <span class="o">[</span>&lt;repository&gt; <span class="o">[</span>&lt;refspec&gt;...<span class="o">]]</span>
+  <span class="c"># prune 就是 “修剪” 的意思， 这条命令会删除 remote 端上本地已经删掉的分支</span>
+git push --mirror <span class="o">[</span>&lt;repository&gt; <span class="o">[</span>&lt;refspec&gt;...<span class="o">]]</span>
+  <span class="c"># 类似的命令 不过功能是让 remote 的仓库和本地同步</span>
+</pre></div></li>
 <li><p>查看每个分支的未提交的第一条commit <a href="http://jfoucher.com/2012/04/github-tricks-from-stackoverflow.html">[link]</a></p>
-
-<pre><code class="bash">git log --branches --not --remotes --decorate --oneline
-  # --not --remotes 查看未提交的信息 --not --remotes=*/master 所有远端master分支中不存在的 commit
-  # --simplify-by-decoration 属于 git-log 的 History Simplification 方面的参数，显示代表选中分支和 tag 的 commit 信息
-  # --decorate 显示分支名
-  # --online 显示一行commit
-</code></pre></li>
+<div class="highlight"><pre>git log --branches --not --remotes --decorate --oneline
+  <span class="c"># --not --remotes 查看未提交的信息 --not --remotes=*/master 所有远端master分支中不存在的 commit</span>
+  <span class="c"># --simplify-by-decoration 属于 git-log 的 History Simplification 方面的参数，显示代表选中分支和 tag 的 commit 信息</span>
+  <span class="c"># --decorate 显示分支名</span>
+  <span class="c"># --online 显示一行commit</span>
+</pre></div></li>
 <li><p>见过的比较好的 git-hook。</p>
 
 <ul>
