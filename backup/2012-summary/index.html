@@ -1,0 +1,53 @@
+ <!DOCTYPE html><html><head><meta charset="utf-8" /><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" /><meta content="user-scalable=no, width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" name="viewport" /><link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" /><link href="/feed.xml" rel="alternate" title="RSS" type="application/rss+xml" /><title>雨忆 - Git 102: -w, --prune, git-log</title><link href="../../css/normalize.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="../../css/master.css" media="screen" rel="stylesheet" type="text/css" /><style>
+  @font-face
+  {
+    font-family: hymb;
+    src: url("/font_dist/4cf0815d37c663fdb2ebc7beaebfee0912ee684e.woff") format("woff"),
+    url("/font_dist/4cf0815d37c663fdb2ebc7beaebfee0912ee684e.ttf") format("truetype");
+  }
+  .webfont-hymb { font-family: hymb; }
+</style>
+</head><body><div class="wrapper"><ul class="nav webfont-hymb"><li><a href="/">首页</a></li><li><a href="/feed.xml" target="_blank">Rss</a></li></ul><h2>为什么是102？</h2>
+
+<p>因为 102 比 101 还多 1, 纯粹是因为 102 比较容易做 seo 啦。</p>
+
+<h2>技巧</h2>
+
+<ol>
+<li><p><code>w</code> 参数。</p>
+
+<p>参数 <code>w</code> 可以搭配 <code>git-diff</code> 和 <code>git-blame</code> 使用, o(∩∩)o 。</p>
+<div class="highlight"><pre>git diff -w <span class="o">(</span>--ignore-all-space<span class="o">)</span> <span class="c"># 可以在 diff 的时候忽略掉对于 whitespace 的修改</span>
+git blame -w
+  <span class="c"># 我觉得比起 diff 来说 blame 的这个参数更加的让我喜爱。</span>
+  <span class="c"># 功能也是屏蔽 whitespace 的修改, 免的很多时候 blame 到无意义的 commit</span>
+</pre></div></li>
+<li><p>快速的删除 github 上本地已经删除的分支。</p>
+<div class="highlight"><pre>git push --prune <span class="o">[</span>&lt;repository&gt; <span class="o">[</span>&lt;refspec&gt;...<span class="o">]]</span>
+  <span class="c"># prune 就是 “修剪” 的意思， 这条命令会删除 remote 端上本地已经删掉的分支</span>
+git push --mirror <span class="o">[</span>&lt;repository&gt; <span class="o">[</span>&lt;refspec&gt;...<span class="o">]]</span>
+  <span class="c"># 类似的命令 不过功能是让 remote 的仓库和本地同步</span>
+</pre></div></li>
+<li><p>查看每个分支的未提交的第一条commit <a href="http://jfoucher.com/2012/04/github-tricks-from-stackoverflow.html">[link]</a></p>
+<div class="highlight"><pre>git log --branches --not --remotes --decorate --oneline
+  <span class="c"># --not --remotes 查看未提交的信息 --not --remotes=*/master 所有远端master分支中不存在的 commit</span>
+  <span class="c"># --simplify-by-decoration 属于 git-log 的 History Simplification 方面的参数，显示代表选中分支和 tag 的 commit 信息</span>
+  <span class="c"># --decorate 显示分支名</span>
+  <span class="c"># --online 显示一行commit</span>
+</pre></div></li>
+<li><p>见过的比较好的 git-hook。</p>
+
+<ul>
+<li>提交 commit 前自动运行 jshint <a href="https://github.com/adamrisser/JSHint-pre-commit-git-hook">[link]</a></li>
+</ul></li>
+</ol>
+</div><script type="text/javascript">var _gaq = _gaq || [];
+_gaq.push(['_setAccount', "UA-39165863-1"]);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();</script></body></html>

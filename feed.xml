@@ -5,7 +5,7 @@
   <id></id>
   <link href="http://hxgdzyuyi.github.com"/>
   <link href="http://hxgdzyuyi.github.com" rel="self"/>
-  <updated>2013-10-10T00:00:00Z</updated>
+  <updated>2014-01-07T00:00:00Z</updated>
   <author>
     <name>Blog Author</name>
   </author>
@@ -13,8 +13,8 @@
     <title>中文字体其实也可以用在网页上的</title>
     <link rel="alternate" href="/blog/chinese-subset.html"/>
     <id>/blog/chinese-subset.html</id>
-    <published>2013-10-10T00:00:00Z</published>
-    <updated>2013-10-10T00:00:00Z</updated>
+    <published>2014-01-07T00:00:00Z</published>
+    <updated>2014-01-07T00:00:00Z</updated>
     <author>
       <name>Article Author</name>
     </author>
@@ -144,79 +144,6 @@
 &lt;h2&gt;感谢&lt;/h2&gt;
 
 &lt;p&gt;本站使用了 &lt;a href="http://makefont.com/"&gt;造字工房&lt;/a&gt; 的悦黑常规体， 和 &lt;a href="http://font.sentywed.com/chalk.htm"&gt;新蒂黑板报体&lt;/a&gt;。&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>17173 的排行榜</title>
-    <link rel="alternate" href="/blog/17173-rank.html"/>
-    <id>/blog/17173-rank.html</id>
-    <published>2013-08-15T00:00:00Z</published>
-    <updated>2013-08-15T00:00:00Z</updated>
-    <author>
-      <name>Article Author</name>
-    </author>
-    <summary type="html">&lt;h2&gt;17173.com 的新游排行榜&lt;/h2&gt;&lt;p&gt;这个排行榜的交互非常有意思, 永远会显示一个游戏的封面。然后随着你鼠标的 hover 移动， 自动显示一条游戏的封面。&lt;/p&gt;&lt;br /&gt;&lt;img width="620" height="358" src="../pics/blog/17173-rank/rank.gif" /&gt;</summary>
-    <content type="html">&lt;h2&gt;17173.com 的新游排行榜&lt;/h2&gt;&lt;p&gt;这个排行榜的交互非常有意思, 永远会显示一个游戏的封面。然后随着你鼠标的 hover 移动， 自动显示一条游戏的封面。&lt;/p&gt;&lt;br /&gt;&lt;img width="620" height="358" src="../pics/blog/17173-rank/rank.gif" /&gt;</content>
-  </entry>
-  <entry>
-    <title>Git 102: -w, --prune, git-log</title>
-    <link rel="alternate" href="/blog/2012-summary.html"/>
-    <id>/blog/2012-summary.html</id>
-    <published>2013-02-15T00:00:00Z</published>
-    <updated>2013-02-15T00:00:00Z</updated>
-    <author>
-      <name>Article Author</name>
-    </author>
-    <summary type="html">&lt;h2&gt;为什么是102？&lt;/h2&gt;
-
-&lt;p&gt;因为 102 比 101 还多 1, 纯粹是因为 102 比较容易做 seo 啦。&lt;/p&gt;
-
-&lt;h2&gt;技巧&lt;/h2&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;w&lt;/code&gt; 参数。&lt;/p&gt;
-
-&lt;p&gt;参数 &lt;code&gt;w&lt;/code&gt; 可以搭配 &lt;code&gt;git-diff&lt;/code&gt; 和 &lt;code&gt;git-blame&lt;/code&gt; 使用, o(∩∩)o 。&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;git diff -w &lt;span class="o"&gt;(&lt;/span&gt;--ignore-all-space&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="c"&gt;# 可以在 diff 的时候忽略掉对于 whitespace 的修改&lt;/span&gt;
-git blame -w
-  &lt;span class="c"&gt;# 我觉得比起 diff 来说 blame 的这个参数更加的让我喜爱。&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
-&lt;/ol&gt;
-</summary>
-    <content type="html">&lt;h2&gt;为什么是102？&lt;/h2&gt;
-
-&lt;p&gt;因为 102 比 101 还多 1, 纯粹是因为 102 比较容易做 seo 啦。&lt;/p&gt;
-
-&lt;h2&gt;技巧&lt;/h2&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;w&lt;/code&gt; 参数。&lt;/p&gt;
-
-&lt;p&gt;参数 &lt;code&gt;w&lt;/code&gt; 可以搭配 &lt;code&gt;git-diff&lt;/code&gt; 和 &lt;code&gt;git-blame&lt;/code&gt; 使用, o(∩∩)o 。&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;git diff -w &lt;span class="o"&gt;(&lt;/span&gt;--ignore-all-space&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="c"&gt;# 可以在 diff 的时候忽略掉对于 whitespace 的修改&lt;/span&gt;
-git blame -w
-  &lt;span class="c"&gt;# 我觉得比起 diff 来说 blame 的这个参数更加的让我喜爱。&lt;/span&gt;
-  &lt;span class="c"&gt;# 功能也是屏蔽 whitespace 的修改, 免的很多时候 blame 到无意义的 commit&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;快速的删除 github 上本地已经删除的分支。&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;git push --prune &lt;span class="o"&gt;[&lt;/span&gt;&amp;lt;repository&amp;gt; &lt;span class="o"&gt;[&lt;/span&gt;&amp;lt;refspec&amp;gt;...&lt;span class="o"&gt;]]&lt;/span&gt;
-  &lt;span class="c"&gt;# prune 就是 “修剪” 的意思， 这条命令会删除 remote 端上本地已经删掉的分支&lt;/span&gt;
-git push --mirror &lt;span class="o"&gt;[&lt;/span&gt;&amp;lt;repository&amp;gt; &lt;span class="o"&gt;[&lt;/span&gt;&amp;lt;refspec&amp;gt;...&lt;span class="o"&gt;]]&lt;/span&gt;
-  &lt;span class="c"&gt;# 类似的命令 不过功能是让 remote 的仓库和本地同步&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;查看每个分支的未提交的第一条commit &lt;a href="http://jfoucher.com/2012/04/github-tricks-from-stackoverflow.html"&gt;[link]&lt;/a&gt;&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;git log --branches --not --remotes --decorate --oneline
-  &lt;span class="c"&gt;# --not --remotes 查看未提交的信息 --not --remotes=*/master 所有远端master分支中不存在的 commit&lt;/span&gt;
-  &lt;span class="c"&gt;# --simplify-by-decoration 属于 git-log 的 History Simplification 方面的参数，显示代表选中分支和 tag 的 commit 信息&lt;/span&gt;
-  &lt;span class="c"&gt;# --decorate 显示分支名&lt;/span&gt;
-  &lt;span class="c"&gt;# --online 显示一行commit&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;见过的比较好的 git-hook。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;提交 commit 前自动运行 jshint &lt;a href="https://github.com/adamrisser/JSHint-pre-commit-git-hook"&gt;[link]&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ol&gt;
 </content>
   </entry>
 </feed>
