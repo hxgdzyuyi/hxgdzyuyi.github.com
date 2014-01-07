@@ -20,26 +20,26 @@
     </author>
     <summary type="html">&lt;h2&gt;中文字体和 @font-face&lt;/h2&gt;
 
-&lt;p&gt;对于互联网而言，自定义字体从来不是一个陌生的东西，&lt;a href="http://web.archive.org/web/19990302042057/http://www.microsoft.com/typography/web/designer/face1.htm"&gt;IE 4&lt;/a&gt; 从 1997 年起就已经支持在浏览器中潜入自定义的字体。而这一种技术被 &lt;a href="http://www.google.com/fonts"&gt;Goolge Fonts&lt;/a&gt; 等免费字体服务推到了一个新的高度。前端工程师借助于 &lt;a href="https://developer.mozilla.org/zh-CN/docs/CSS/@font-face"&gt;@font-face&lt;/a&gt; , 可以轻松的在网页上使用各种字体，基本已经成为国外网页设计的标配了。&lt;/p&gt;
+&lt;p&gt;对于互联网而言，自定义字体从来不是一个陌生的东西，&lt;a href="http://web.archive.org/web/19990302042057/http://www.microsoft.com/typography/web/designer/face1.htm"&gt;IE 4&lt;/a&gt; 从 1997 年起就已经支持在浏览器中潜入自定义的字体。而这一种技术被 &lt;a href="http://www.google.com/fonts"&gt;Goolge Fonts&lt;/a&gt; 等免费字体服务推到了一个新的高度。前端工程师借助于 &lt;a href="https://developer.mozilla.org/zh-CN/docs/CSS/@font-face"&gt;@font-face&lt;/a&gt; ， 可以轻松的在网页上使用各种字体，基本已经成为国外网页设计的标配了。&lt;/p&gt;
 </summary>
     <content type="html">&lt;h2&gt;中文字体和 @font-face&lt;/h2&gt;
 
-&lt;p&gt;对于互联网而言，自定义字体从来不是一个陌生的东西，&lt;a href="http://web.archive.org/web/19990302042057/http://www.microsoft.com/typography/web/designer/face1.htm"&gt;IE 4&lt;/a&gt; 从 1997 年起就已经支持在浏览器中潜入自定义的字体。而这一种技术被 &lt;a href="http://www.google.com/fonts"&gt;Goolge Fonts&lt;/a&gt; 等免费字体服务推到了一个新的高度。前端工程师借助于 &lt;a href="https://developer.mozilla.org/zh-CN/docs/CSS/@font-face"&gt;@font-face&lt;/a&gt; , 可以轻松的在网页上使用各种字体，基本已经成为国外网页设计的标配了。&lt;/p&gt;
+&lt;p&gt;对于互联网而言，自定义字体从来不是一个陌生的东西，&lt;a href="http://web.archive.org/web/19990302042057/http://www.microsoft.com/typography/web/designer/face1.htm"&gt;IE 4&lt;/a&gt; 从 1997 年起就已经支持在浏览器中潜入自定义的字体。而这一种技术被 &lt;a href="http://www.google.com/fonts"&gt;Goolge Fonts&lt;/a&gt; 等免费字体服务推到了一个新的高度。前端工程师借助于 &lt;a href="https://developer.mozilla.org/zh-CN/docs/CSS/@font-face"&gt;@font-face&lt;/a&gt; ， 可以轻松的在网页上使用各种字体，基本已经成为国外网页设计的标配了。&lt;/p&gt;
 
-&lt;p&gt;可是回过头来一看，中文 和 font-face 似乎从来没有什么交集, “在网页中使用个性化的中文字体？” 这看起来是一件很困难的事情, 并且很少人做过的事情。仔细想想，瓶颈基本上可以归结在两个点&lt;/p&gt;
+&lt;p&gt;可是回过头来一看，中文 和 font-face 似乎从来没有什么交集， “在网页中使用个性化的中文字体？” 这看起来是一件很困难的事情， 并且很少人做过的事情。仔细想想，瓶颈基本上可以归结在两个点：&lt;/p&gt;
 
 &lt;ol&gt;
-&lt;li&gt;中文字符太多，制作精良的中文字体太少， 成本也大。&lt;/li&gt;
+&lt;li&gt;中文字符太多，制作精良的中文字体太少，成本也大。&lt;/li&gt;
 &lt;li&gt;中文字符太多，导致文件庞大，动辄数个 MB，下载成本太大。&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h3&gt;如何解决中文字体过大的问题&lt;/h3&gt;
 
-&lt;p&gt;相比起我们希望的, 在网页上使用中文字体，中文字体更早，并且更频繁的用于 PDF 上。 而且 PDF 同样对文件大小有很严苛的限制。基本上前辈们为了解决 PDF 文件可以使用各种漂亮的字体，并且文件体积足够小，有一种叫做 字体子集 (embedded subset) 的概念，就是将原有的字体裁剪出只被这个 PDF 文件使用的部分，从而达到缩小字体体积的目的。相对应的概念叫做 (full embedded fonts)。 参考这个方案，我们只需要针对特定的网页裁剪出特定的字体就可以了，这样让网页在流量，打开速度和美观上达到了和谐。&lt;/p&gt;
+&lt;p&gt;相比起我们希望的， 在网页上使用中文字体，中文字体更早，并且更频繁的用于 PDF 上。 而且 PDF 同样对文件大小有很严苛的限制。基本上前辈们为了解决 PDF 文件可以使用各种漂亮的字体，并且文件体积足够小，有一种叫做 字体子集 (embedded subset) 的概念，就是将原有的字体裁剪出只被这个 PDF 文件使用的部分，从而达到缩小字体体积的目的。相对应的概念叫做 (full embedded fonts)。 参考这个方案，我们只需要针对特定的网页裁剪出特定的字体就可以了，这样让网页在流量，打开速度和美观上达到了和谐。&lt;/p&gt;
 
-&lt;p&gt;借助 Google Fonts 使用的类库 &lt;a href="https://code.google.com/p/sfntly/"&gt;sfntly&lt;/a&gt; 可以轻松做到这一点, sfntly 可以轻松的处理基于 &lt;a href="http://en.wikipedia.org/wiki/SFNT"&gt;sfnt&lt;/a&gt; 格式存储的字体, 拆分, 裁剪, 生成 WOFF, TTF, EOT 等字体。&lt;/p&gt;
+&lt;p&gt;我们借助 Google Fonts 使用的类库 &lt;a href="https://code.google.com/p/sfntly/"&gt;sfntly&lt;/a&gt; 可以轻松做到这一点， sfntly 可以轻松的处理基于 &lt;a href="http://en.wikipedia.org/wiki/SFNT"&gt;sfnt&lt;/a&gt; 格式存储的字体， 拆分， 裁剪， 生成 WOFF， TTF， EOT 等字体。&lt;/p&gt;
 
-&lt;p&gt;比如直接使用 sfntly 内置的 sfnttool, 可以看到它的命令帮助&lt;/p&gt;
+&lt;p&gt;比如直接使用 sfntly 内置的 sfnttool， 可以看到它的命令帮助&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;  &lt;span class="n"&gt;java&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;jar&lt;/span&gt; &lt;span class="n"&gt;sfnttool&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;jar&lt;/span&gt;
   &lt;span class="n"&gt;Subset&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;?&lt;span class="o"&gt;|-&lt;/span&gt;&lt;span class="n"&gt;h&lt;/span&gt;&lt;span class="o"&gt;|-&lt;/span&gt;&lt;span class="n"&gt;help&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt; &lt;span class="n"&gt;string&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="n"&gt;fontfile&lt;/span&gt; &lt;span class="n"&gt;outfile&lt;/span&gt;
   &lt;span class="n"&gt;Prototype&lt;/span&gt; &lt;span class="n"&gt;font&lt;/span&gt; &lt;span class="n"&gt;subsetter&lt;/span&gt;
@@ -54,12 +54,12 @@
 &lt;p&gt;可以轻松的从 MFYuehei.ttf 中提取出只有 &amp;#39;中文&amp;#39; 两个字的字体&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;  &lt;span class="n"&gt;java&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;jar&lt;/span&gt; &lt;span class="n"&gt;sfnttool&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;jar&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;w&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;中文&amp;#39;&lt;/span&gt; &lt;span class="n"&gt;MFYuehei&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ttf&lt;/span&gt; &lt;span class="n"&gt;new&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;MFYuehei&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ttf&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;总的来说在裁剪字体这条方向上, 目前也有几种在这个方向上的努力， 稍做介绍。&lt;/p&gt;
+&lt;p&gt;总的来说在裁剪字体这条方向上， 目前也有几种在这个方向上的努力， 稍做介绍。&lt;/p&gt;
 
 &lt;ol&gt;
-&lt;li&gt;&lt;a href="https://github.com/hxgdzyuyi/cjk-subsetter"&gt;CjkSubsetter&lt;/a&gt; 本站使用的 Rack 中间件借 sfntly, 搭配 middleman 生成了现在所见的这个静态网站&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/hxgdzyuyi/cjk-subsetter"&gt;CjkSubsetter&lt;/a&gt; 本站使用的 Rack 中间件借 sfntly， 搭配 middleman 生成了现在所见的这个静态网站&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://www.foundertype.com/cloudfont/cloudfont.html"&gt;方正字体云服务&lt;/a&gt; 收费， 方正字体&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://www.justfont.com/"&gt;justfont&lt;/a&gt; 收费, 使用 js 请求的方案, 原则上可以嵌入到任何网站, 有 api 请求限制， 字体有限。&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.justfont.com/"&gt;justfont&lt;/a&gt; 收费， 使用 js 请求的方案， 原则上可以嵌入到任何网站， 有 api 请求限制， 字体有限。&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h3&gt;如何找到优秀的中文字体&lt;/h3&gt;
@@ -111,7 +111,7 @@
     &lt;tr&gt;
       &lt;td&gt;CSS3 Text Effects / SVG filters&lt;/td&gt;
       &lt;td&gt;
-        &lt;span class="webfont-mfyuehei" style="color:#666; font-size: 22px; text-shadow: 1px 1px 0px #eee, 2px 3px 0px #ddd; "&gt;中文&lt;/span&gt;
+        &lt;span class="webfont-mfyuehei" style="color:#666; font-size: 22px; text-shadow: 1px 1px 0px #eee， 2px 3px 0px #ddd; "&gt;中文&lt;/span&gt;
       &lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
@@ -122,7 +122,7 @@
 &lt;p&gt;浏览器每一个行文字的结尾都遵循了标准的禁则(比如中文里头逗号不能出现在第一行的第一个字符)。使用中文字体并不会破坏这个特性，让优秀的设计可以在不同的设备完美的展现。&lt;/p&gt;
 
 &lt;div class="webfont-mfyuehei resizeable" style="resize: horizontal; overflow: hidden; width: 100px; border; padding: 10px; border: 1px solid #ddd; border-radius: 10px"&gt;
-中文字体,关键是可以：“禁则”哦!!!
+中文字体，关键是可以：“禁则”哦!!!
 &lt;/div&gt;
 
 &lt;h3&gt;更多精彩的实例&lt;/h3&gt;

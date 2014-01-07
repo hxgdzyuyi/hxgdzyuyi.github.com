@@ -1,4 +1,4 @@
- <!DOCTYPE html><html><head><meta charset="utf-8" /><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" /><link href="/feed.xml" rel="alternate" title="RSS" type="application/rss+xml" /><title>hxgdzyuyi</title><link href="../css/normalize.css" media="screen" rel="stylesheet" type="text/css" />
+ <!DOCTYPE html><html><head><meta charset="utf-8" /><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" /><meta content="user-scalable=no, width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" name="viewport" /><link href="/feed.xml" rel="alternate" title="RSS" type="application/rss+xml" /><title>hxgdzyuyi</title><link href="../css/normalize.css" media="screen" rel="stylesheet" type="text/css" />
 <link href="../css/master.css" media="screen" rel="stylesheet" type="text/css" /><link href="../css/blog/github.css" media="screen" rel="stylesheet" type="text/css" />
 <link href="../css/blog/page.css" media="screen" rel="stylesheet" type="text/css" /><style>
   @font-face
@@ -13,29 +13,29 @@
   @font-face
   {
     font-family: mfyuehei;
-    src: url("/font_dist/65175cc20cf47d2828e6744689206940cdb927cb.woff") format("woff"),
-    url("/font_dist/65175cc20cf47d2828e6744689206940cdb927cb.ttf") format("truetype");
+    src: url("/font_dist/18c977f5c53ad3984dd0ccdd7d8afda87b2dc09d.woff") format("woff"),
+    url("/font_dist/18c977f5c53ad3984dd0ccdd7d8afda87b2dc09d.ttf") format("truetype");
   }
   .webfont-mfyuehei { font-family: mfyuehei; }
 </style>
 </head><body><div class="wrapper"><ul class="nav webfont-hymb"><li><a href="/">首页</a></li><li><a href="/feed.xml" target="_blank">Rss</a></li></ul><div class="blog main"><h1 class="webfont-mfyuehei">中文字体其实也可以用在网页上的</h1><h2>中文字体和 @font-face</h2>
 
-<p>对于互联网而言，自定义字体从来不是一个陌生的东西，<a href="http://web.archive.org/web/19990302042057/http://www.microsoft.com/typography/web/designer/face1.htm">IE 4</a> 从 1997 年起就已经支持在浏览器中潜入自定义的字体。而这一种技术被 <a href="http://www.google.com/fonts">Goolge Fonts</a> 等免费字体服务推到了一个新的高度。前端工程师借助于 <a href="https://developer.mozilla.org/zh-CN/docs/CSS/@font-face">@font-face</a> , 可以轻松的在网页上使用各种字体，基本已经成为国外网页设计的标配了。</p>
+<p>对于互联网而言，自定义字体从来不是一个陌生的东西，<a href="http://web.archive.org/web/19990302042057/http://www.microsoft.com/typography/web/designer/face1.htm">IE 4</a> 从 1997 年起就已经支持在浏览器中潜入自定义的字体。而这一种技术被 <a href="http://www.google.com/fonts">Goolge Fonts</a> 等免费字体服务推到了一个新的高度。前端工程师借助于 <a href="https://developer.mozilla.org/zh-CN/docs/CSS/@font-face">@font-face</a> ， 可以轻松的在网页上使用各种字体，基本已经成为国外网页设计的标配了。</p>
 
-<p>可是回过头来一看，中文 和 font-face 似乎从来没有什么交集, “在网页中使用个性化的中文字体？” 这看起来是一件很困难的事情, 并且很少人做过的事情。仔细想想，瓶颈基本上可以归结在两个点</p>
+<p>可是回过头来一看，中文 和 font-face 似乎从来没有什么交集， “在网页中使用个性化的中文字体？” 这看起来是一件很困难的事情， 并且很少人做过的事情。仔细想想，瓶颈基本上可以归结在两个点：</p>
 
 <ol>
-<li>中文字符太多，制作精良的中文字体太少， 成本也大。</li>
+<li>中文字符太多，制作精良的中文字体太少，成本也大。</li>
 <li>中文字符太多，导致文件庞大，动辄数个 MB，下载成本太大。</li>
 </ol>
 
 <h3>如何解决中文字体过大的问题</h3>
 
-<p>相比起我们希望的, 在网页上使用中文字体，中文字体更早，并且更频繁的用于 PDF 上。 而且 PDF 同样对文件大小有很严苛的限制。基本上前辈们为了解决 PDF 文件可以使用各种漂亮的字体，并且文件体积足够小，有一种叫做 字体子集 (embedded subset) 的概念，就是将原有的字体裁剪出只被这个 PDF 文件使用的部分，从而达到缩小字体体积的目的。相对应的概念叫做 (full embedded fonts)。 参考这个方案，我们只需要针对特定的网页裁剪出特定的字体就可以了，这样让网页在流量，打开速度和美观上达到了和谐。</p>
+<p>相比起我们希望的， 在网页上使用中文字体，中文字体更早，并且更频繁的用于 PDF 上。 而且 PDF 同样对文件大小有很严苛的限制。基本上前辈们为了解决 PDF 文件可以使用各种漂亮的字体，并且文件体积足够小，有一种叫做 字体子集 (embedded subset) 的概念，就是将原有的字体裁剪出只被这个 PDF 文件使用的部分，从而达到缩小字体体积的目的。相对应的概念叫做 (full embedded fonts)。 参考这个方案，我们只需要针对特定的网页裁剪出特定的字体就可以了，这样让网页在流量，打开速度和美观上达到了和谐。</p>
 
-<p>借助 Google Fonts 使用的类库 <a href="https://code.google.com/p/sfntly/">sfntly</a> 可以轻松做到这一点, sfntly 可以轻松的处理基于 <a href="http://en.wikipedia.org/wiki/SFNT">sfnt</a> 格式存储的字体, 拆分, 裁剪, 生成 WOFF, TTF, EOT 等字体。</p>
+<p>我们借助 Google Fonts 使用的类库 <a href="https://code.google.com/p/sfntly/">sfntly</a> 可以轻松做到这一点， sfntly 可以轻松的处理基于 <a href="http://en.wikipedia.org/wiki/SFNT">sfnt</a> 格式存储的字体， 拆分， 裁剪， 生成 WOFF， TTF， EOT 等字体。</p>
 
-<p>比如直接使用 sfntly 内置的 sfnttool, 可以看到它的命令帮助</p>
+<p>比如直接使用 sfntly 内置的 sfnttool， 可以看到它的命令帮助</p>
 <div class="highlight"><pre>  <span class="n">java</span> <span class="o">-</span><span class="n">jar</span> <span class="n">sfnttool</span><span class="p">.</span><span class="n">jar</span>
   <span class="n">Subset</span> <span class="p">[</span><span class="o">-</span>?<span class="o">|-</span><span class="n">h</span><span class="o">|-</span><span class="n">help</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">b</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">s</span> <span class="n">string</span><span class="p">]</span> <span class="n">fontfile</span> <span class="n">outfile</span>
   <span class="n">Prototype</span> <span class="n">font</span> <span class="n">subsetter</span>
@@ -50,12 +50,12 @@
 <p>可以轻松的从 MFYuehei.ttf 中提取出只有 &#39;中文&#39; 两个字的字体</p>
 <div class="highlight"><pre>  <span class="n">java</span> <span class="o">-</span><span class="n">jar</span> <span class="n">sfnttool</span><span class="p">.</span><span class="n">jar</span> <span class="o">-</span><span class="n">w</span> <span class="o">-</span><span class="n">s</span> <span class="s">&#39;中文&#39;</span> <span class="n">MFYuehei</span><span class="p">.</span><span class="n">ttf</span> <span class="n">new</span><span class="o">-</span><span class="n">MFYuehei</span><span class="p">.</span><span class="n">ttf</span>
 </pre></div>
-<p>总的来说在裁剪字体这条方向上, 目前也有几种在这个方向上的努力， 稍做介绍。</p>
+<p>总的来说在裁剪字体这条方向上， 目前也有几种在这个方向上的努力， 稍做介绍。</p>
 
 <ol>
-<li><a href="https://github.com/hxgdzyuyi/cjk-subsetter">CjkSubsetter</a> 本站使用的 Rack 中间件借 sfntly, 搭配 middleman 生成了现在所见的这个静态网站</li>
+<li><a href="https://github.com/hxgdzyuyi/cjk-subsetter">CjkSubsetter</a> 本站使用的 Rack 中间件借 sfntly， 搭配 middleman 生成了现在所见的这个静态网站</li>
 <li><a href="http://www.foundertype.com/cloudfont/cloudfont.html">方正字体云服务</a> 收费， 方正字体</li>
-<li><a href="http://www.justfont.com/">justfont</a> 收费, 使用 js 请求的方案, 原则上可以嵌入到任何网站, 有 api 请求限制， 字体有限。</li>
+<li><a href="http://www.justfont.com/">justfont</a> 收费， 使用 js 请求的方案， 原则上可以嵌入到任何网站， 有 api 请求限制， 字体有限。</li>
 </ol>
 
 <h3>如何找到优秀的中文字体</h3>
@@ -107,7 +107,7 @@
     <tr>
       <td>CSS3 Text Effects / SVG filters</td>
       <td>
-        <span class="webfont-mfyuehei" style="color:#666; font-size: 22px; text-shadow: 1px 1px 0px #eee, 2px 3px 0px #ddd; ">中文</span>
+        <span class="webfont-mfyuehei" style="color:#666; font-size: 22px; text-shadow: 1px 1px 0px #eee， 2px 3px 0px #ddd; ">中文</span>
       </td>
     </tr>
   </tbody>
@@ -118,7 +118,7 @@
 <p>浏览器每一个行文字的结尾都遵循了标准的禁则(比如中文里头逗号不能出现在第一行的第一个字符)。使用中文字体并不会破坏这个特性，让优秀的设计可以在不同的设备完美的展现。</p>
 
 <div class="webfont-mfyuehei resizeable" style="resize: horizontal; overflow: hidden; width: 100px; border; padding: 10px; border: 1px solid #ddd; border-radius: 10px">
-中文字体,关键是可以：“禁则”哦!!!
+中文字体，关键是可以：“禁则”哦!!!
 </div>
 
 <h3>更多精彩的实例</h3>
